@@ -12,8 +12,8 @@
     <nav>
        <ul class="red-list">
           <li>View Music</li>
-          <li>Add Music</li>
-          <li>Profile</li>
+          <li class="nav-button">Add Music</li>
+          <li class="nav-button">Profile</li>
         </ul>
     </nav>
   </header>
@@ -21,12 +21,12 @@
  <div id="blue-section">
   <div class="blue-input">
     <label for="song-length">Song Length</label>
-    <input type="range" name="song-length" min="15" max="25" step="0.5" value="18.5">
+    <input type="range" name="song-length" min="10" max="20" step="0.5" value="15">
   </div>
 
   <div class="blue-input">
 	   <label>Artist:</label>   
-	    <input name="artist" list="artist-option">
+	    <input class="option" name="artist" list="artist-option" placeholder="Options">
 	      <datalist id="artist-option">
 	        <option value="Jackson Brown">
 	        <option value="Elton John">
@@ -37,7 +37,7 @@
 
   <div class="blue-input">
 	   <label>Albums:</label>   
-	    <input name="album" list="album-option">
+	    <input name="album" list="album-option" placeholder="Options">
 	      <datalist id="album-option">
 	        <option value="Jackson Brown">
 	        <option value="Elton John">
@@ -49,18 +49,18 @@
   <div class="blue-input">
 	     <label >Genre:</label>
 	     	<ul class="blue-list1">
-		    <li><input type="checkbox" name="rock" value="rock"> Rock</li>
-		    <li><input type="checkbox" name="pop" value="pop"> Pop</li>
-		    <li><input type="checkbox" name="blues" value="blues"> Blues</li>
+		    <li><input type="checkbox" name="genre" value="rock"> Rock</li>
+		    <li><input type="checkbox" name="genre" value="pop"> Pop</li>
+		    <li><input type="checkbox" name="genre" value="blues"> Blues</li>
 		    </ul>
 			<ul class="blue-list2">
-		    <li><input type="checkbox" name="classical" value="classical"> Classical</li>
-	 	    <li><input type="checkbox" name="jazz" value="jazz"> Jazz</li>
-		    <li><input type="checkbox" name="hip-hop" value="hip-hop"> Hip-Hop</li>
+		    <li><input type="checkbox" name="genre" value="classical"> Classical</li>
+	 	    <li><input type="checkbox" name="genre" value="jazz"> Jazz</li>
+		    <li><input type="checkbox" name="genre" value="hip-hop"> Hip-Hop</li>
 		    </ul>
   </div>
   <div class="blue-input">
-		 <label>Filter</label>  <!--  need to add syntax for button -->
+     <input type="button" value="Filter" onclick=""> 
    </div>
 </div>
 
@@ -68,11 +68,36 @@
    	<h2>Song Name</h2>
    	  <div>
    	  	<ul class="yellow-list">
-   	  	  <li>Artist Name</li>
-		  <li>Album Name</li>
+   	  	  <li class="border-rt">Artist Name</li>
+    		  <li class="border-rt">Album Name</li>
    	  	  <li>Genre</li>
    	  	</ul>
    	  </div>
+    <h2>Song Name</h2>
+      <div>
+        <ul class="yellow-list">
+          <li class="border-rt">Artist Name</li>
+          <li class="border-rt">Album Name</li>
+          <li>Genre</li>
+        </ul>
+      </div>
+    <h2>Song Name</h2>
+      <div>
+        <ul class="yellow-list">
+          <li class="border-rt">Artist Name</li>
+          <li class="border-rt">Album Name</li>
+          <li>Genre</li>
+        </ul>
+      </div>
+   <h2>Song Name</h2>
+      <div>
+        <ul class="yellow-list">
+          <li class="border-rt">Artist Name</li>
+          <li class="border-rt">Album Name</li>
+          <li>Genre</li>
+        </ul>
+      </div>
+
 </div>
 
 </body>
