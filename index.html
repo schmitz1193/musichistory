@@ -9,8 +9,8 @@
 
 <body> 
   <header id="my-header">
-    <nav class="navigation">
-       <ul>
+    <nav>
+       <ul class="red-list">
           <li>View Music</li>
           <li>Add Music</li>
           <li>Profile</li>
@@ -48,12 +48,16 @@
 
   <div class="blue-input">
 	     <label >Genre:</label>
-		    <input type="checkbox" name="rock" value="rock"> Rock
-		    <input type="checkbox" name="pop" value="pop"> Pop
-		    <input type="checkbox" name="blues" value="blues"> Blues
-		    <input type="checkbox" name="classical" value="classical"> Classical
-	 	    <input type="checkbox" name="jazz" value="jazz"> Jazz
-		    <input type="checkbox" name="hip-hop" value="hip-hop"> Hip-Hop
+	     	<ul class="blue-list1">
+		    <li><input type="checkbox" name="rock" value="rock"> Rock</li>
+		    <li><input type="checkbox" name="pop" value="pop"> Pop</li>
+		    <li><input type="checkbox" name="blues" value="blues"> Blues</li>
+		    </ul>
+			<ul class="blue-list2">
+		    <li><input type="checkbox" name="classical" value="classical"> Classical</li>
+	 	    <li><input type="checkbox" name="jazz" value="jazz"> Jazz</li>
+		    <li><input type="checkbox" name="hip-hop" value="hip-hop"> Hip-Hop</li>
+		    </ul>
   </div>
   <div class="blue-input">
 		 <label>Filter</label>  <!--  need to add syntax for button -->
@@ -62,8 +66,8 @@
 
 <div id="yellow-section">
    	<h2>Song Name</h2>
-   	  <div class="yellow-lists">
-   	  	<ul>
+   	  <div>
+   	  	<ul class="yellow-list">
    	  	  <li>Artist Name</li>
 		  <li>Album Name</li>
    	  	  <li>Genre</li>
