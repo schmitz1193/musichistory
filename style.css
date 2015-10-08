@@ -1,0 +1,49 @@
+body{
+	font-size: 25px;
+}
+
+
+#my-header {
+	background-color: #FFB4B0;
+}
+
+
+/*
+.navigation > ul > li {
+  float: left;
+  list-style-type: none;
+  display: inline;
+}
+
+.cleared {
+	clear: both;
+}
+*/
+
+
+#blue-section {
+	background-color: #4DD7FA ;
+	display: inline-block;
+	width: 30%;
+}
+
+#yellow-section {
+	background-color: #FEFAC0 ;
+	display: inline;
+	float: right;
+/*	padding: 25px 50px 25px 50px; */
+	width: 60%;
+}
+
+.blue-input {
+	padding: 25px;
+}
+
+li {
+	display: inline;
+	padding: 5px 5px;
+}
+
+h2 {
+	margin: 5px 10px 5px 50px;
+}
