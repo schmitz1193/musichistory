@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music History Part 1</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>body>
+  <header id="my-header">
+    <nav class="navigation">
+       <ul>
+          <li>View Music</li>
+          <li>Add Music</li>
+          <li>Profile</li>
+        </ul>
+    </nav>
+  </header>
+
+  <div>
+    <label for="song-length">Song Length</label>
+      <input type="range" name="song-length" min="15" max="25" step="0.5" value="18.5">
+
+   <label>Artist:</label>   
+    <input name="artist" list="artist-option">
+      <datalist id="artist-option">
+        <option value="Jackson Brown">
+        <option value="Elton John">
+        <option value="Billy Joel">
+        <option value="Bruce Springstein">
+      </datalist>
+
+     <label >Genre:</label>
+	    <input type="checkbox" name="down-payment" value="down-payment"> Rock
+	    <input type="checkbox" name="out-of-state" value="out-of-state"> Pop
+	    <input type="checkbox" name="married" value="married"> Blues
+	    <input type="checkbox" name="co-signed" value="co-signed"> Classical
+ 	    <input type="checkbox" name="married" value="married"> Jazz
+	    <input type="checkbox" name="co-signed" value="co-signed"> Hip-Hop
+
+	 <label>Filter</label>  <!--  need to add syntax for button -->
+ </div>
+ 
+
+ 
