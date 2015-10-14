@@ -35,7 +35,7 @@ for (var i = 0; i < songs.length; i++) {
 		songs[i] = sliceSign;
 	}	
 //using replace get rid of all other symbols --- check f symbols
-	songs[i] = songs[i].replace(/!|@/g, "");
+	songs[i] = songs[i].replace(/!|@|\*|\(/g, "");
 	console.log("Song array", songs[i]);		
 //REMOVE ABOVE COMMENTS TO GET CORRECT REPLACE SYNTAX!!!!
 
