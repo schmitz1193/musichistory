@@ -8,7 +8,8 @@
 </head>
 
 <body> 
-  <header id="my-header">
+  <div class="bodybox">
+  <header id="my-header" class="headerbox">
     <nav>
        <ul class="red-list">
           <li>View Music</li>
@@ -20,7 +21,7 @@
 
 
   <section id="blue-yellow">
-   <div id="blue-section">
+   <div id="blue-section" class="bluebox">
     <div class="blue-input">
       <label for="song-length">Song Length</label>
       <input type="range" name="song-length" min="10" max="20" step="0.5" value="15">
@@ -65,7 +66,7 @@
   </div>
 
 
-  <div id="yellow-section">
+  <div id="yellow-section" class="yellowbox">
     <div id="lineOne"></div>
  <!--     <h2 >Song Name</h2>
      	  <div>
@@ -103,7 +104,7 @@
   </div>
   </section>
   <script src="songs.js"></script> 
-
+</div>      <!--- closing tag for div just below body -->
 </body>
  
 
