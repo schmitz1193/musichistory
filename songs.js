@@ -31,28 +31,23 @@ for (var i = 0; i < songs.length; i++) {
 	if (testCheck !== -1) {
 //using index of > sign location slice it out, add a - and tack on the end.		
 		sliceSign = songs[i].slice(0, testCheck) + "-" + songs[i].slice(testCheck +1);
-//		console.log(sliceSign);
 		songs[i] = sliceSign;
 	}	
 //using replace get rid of all other symbols --- check f symbols
 	songs[i] = songs[i].replace(/!|@|\*|\(/g, "");
-	console.log("Song array", songs[i]);		
-//REMOVE ABOVE COMMENTS TO GET CORRECT REPLACE SYNTAX!!!!
+		
+//Must add each string to the DOM in index.html in the main content area.
+//{Song name} by {Artist} on the album {Album}
 
 	currentSong = songs[i];
-	console.log("current song", currentSong);
-	currentSong = "<div>" + currentSong;
-	console.log("this is info song", currentSong);
+	currentSong = "<div class='songLists'>" + currentSong + "</div>";
+	
 	infoSong = infoSong + currentSong;
 
 }
 
 listSong.innerHTML = infoSong;
 
+console.log("this should be the div ", listSong.innerHTML);
 
 
-
-
-
-//Must add each string to the DOM in index.html in the main content area.
-//{Song name} by {Artist} on the album {Album}
