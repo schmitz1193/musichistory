@@ -1,92 +1,29 @@
 body{
-	width: 80%;
+	width: 75%;
 	max-height: 80%;
-	margin: auto;
+	margin: 20px auto;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: normal;
 	font-family: sans-serif;
 }
 
-/***************** original header formatting
-#my-header {
-	background-color: #FFB4B0;
-	border: 2px solid black;
-	margin: 5px 0 20px 0;
-	font-size: 80%;
-	height: 10%;
-}
-****************/
+/* Trying to figure out CSS so nav scrolls */ 
 
-.nav-button {
-	text-decoration: underline;
-	border-right: 2px solid black;
-}
-
-/************  original blue formatting
-#blue-section {
-	text-align: center;
-	font-weight: normal;
-	background-color: #4DD7FA ;
-	display: inline-block;
-	width: 30%;
-	height: 80%;
-	border: 2px solid black;
-}   ********************************/
-/************************ original yellow formatting
-#yellow-section {
-	background-color: #FEFAC0 ;
-	padding: 5% 0 5% 0;
-	display: inline;
-	float: right;
-	width: 65%;
-	height: 100%;
-	border: 2px solid black;
-}
-************************************/
-.blue-input {
-	padding: 5px 10px;
+header > nav {
+	position: fixed;
+	width: 100%;
+	height: 200px;
+	left: 0;
+	top: 0;
 }
 
 .red-list > li {
-	display: inline;
+	display: inline-block;
 	padding: 5px 5px;
-	list-style-type: none;
-}     
-
-.option {
-	color: black;
-	font-weight: bolder;
-	border: 2px solid black;
-	border-radius: 5px 5px 5px 5px;
-}
-
-.blue-list1  > li {
-	list-style-type: none;
-	padding: 2px 5px;
-	text-align: left;
-} 
-.blue-button {
-	clear: both;
-	text-align: center;
-}
-
-.yellow-list  > li{
-	display: inline;
-	padding: 5px 5px;
-	list-style-type: none;
-}
-.border-rt {
-	border-right: 2px solid black;
-}
-
-label {
-	display: block;
-}
-
-h2 {
-	margin: 5px 10px 5px 50px;
-	color: #785616;
-}
+	list-style-type: none; 
+	text-decoration: underline;
+	cursor: pointer;
+}  
 
 /* Start flexbox Css   */
 .bodybox {
@@ -97,36 +34,66 @@ h2 {
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
 }
-
 .bodybox > header { 
   flex: 1 100%;
-  background-color: #FFB4B0;
-  padding: 5px;
-  width: 100px;
+  background: #FFB4B0;
   border: 2px solid black;
+  padding: 5px;
   font-weight: bold;
   font-size: 1em;
   text-align: center;
-
+  width: 100%;
 }
-
 .bluebox { 
   flex-grow: 1;
   text-align: center;
-  background-color: #4DD7FA ;
+  background: #4DD7FA ;
   border: 2px solid black;
   width: 200px;
+  margin: 5px 5px 0 0;
+  padding: 15px 10px;
 }
-
 .yellowbox { 
   flex-grow: 10;
-  background-color: #FEFAC0 ;
+  background: #FEFAC0 ;
   border: 2px solid black;
   width: 200px;
-
+  margin: 5px 0 0 0;
 }
 
-/* Code to color songs */
+/*****  header fixed code  */
+
+/********CSS for inside BlueBox   */  
+.option {
+	color: black;
+	font-weight: bolder;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+.blue-list1  > li {
+	list-style-type: none;
+	padding: 2px 5px;
+	text-align: left;
+} 
+.blue-button {
+	text-align: center;
+}
+
+/*****CSS for inside YellowBox---not currently in use  */
+
+.border-rt {
+	border-right: 2px solid black;
+}
+label {
+	display: block;
+}
+
+h2 {
+	margin: 5px 10px 5px 50px;
+	color: #785616;
+}
+
+/* Code to style songlist songs */
 
 .songLists {
 	padding: 15px 4px;
@@ -140,7 +107,7 @@ h2 {
   background: #F5FFFA;
 }
 
-.songFont:first-child {
+.songLists:first-child {
   font-weight: bolder;
 }
 
