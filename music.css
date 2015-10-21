@@ -1,0 +1,118 @@
+body{
+	width: 75%;
+	max-height: 80%;
+	margin: 20px auto;
+	font-size: 15px;
+	font-weight: normal;
+	font-family: sans-serif;
+}
+
+/* Trying to figure out CSS so nav scrolls */ 
+
+header > nav {
+	position: fixed;
+	width: 100%;
+	height: 200px;
+	left: 0;
+	top: 0;
+}
+
+.red-list > li {
+	display: inline-block;
+	padding: 5px 5px;
+	list-style-type: none; 
+	text-decoration: underline;
+	cursor: pointer;
+}  
+
+/* Start flexbox Css   */
+.bodybox {
+  padding: 0;
+  list-style: none;
+  height: 5em; 
+  display: flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+}
+.bodybox > header { 
+  flex: 1 100%;
+  background: #FFB4B0;
+  border: 2px solid black;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  width: 100%;
+}
+#bluebox { 
+  flex-grow: 1;
+  text-align: center;
+  background: #4DD7FA ;
+  border: 2px solid black;
+  width: 200px;
+  margin: 5px 5px 0 0;
+  padding: 15px 10px;
+}
+.yellowbox { 
+  flex-grow: 10;
+  background: #FEFAC0 ;
+  border: 2px solid black;
+  width: 200px;
+  margin: 5px 0 0 0;
+}
+
+/*****  header fixed code  */
+
+/********CSS for inside BlueBox   */  
+.option {
+	color: black;
+	font-weight: bolder;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+.blue-list1  > li {
+	list-style-type: none;
+	padding: 2px 5px;
+	text-align: left;
+} 
+.blue-button {
+	text-align: center;
+}
+
+/*****CSS for inside YellowBox---not currently in use  */
+
+.border-rt {
+	border-right: 2px solid black;
+}
+label {
+	display: block;
+}
+
+h2 {
+	margin: 5px 10px 5px 50px;
+	color: #785616;
+}
+
+/* Code to style songlist songs */
+
+.songLists {
+	padding: 15px 4px;
+}
+
+.songColor :nth-child(2n+0) {  
+  background: #FFF5EE;
+}
+
+.songColor :nth-child(2n+1) { 
+  background: #F5FFFA;
+}
+
+.songLists:first-child {
+  font-weight: bolder;
+}
+
+
+
+
+
+

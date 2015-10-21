@@ -1,96 +1,78 @@
 body{
-	width: 75%;
-	max-height: 80%;
-	margin: 20px auto;
-	font-size: 15px;
-	font-weight: normal;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 75%;
+	position: relative;
 	font-family: sans-serif;
 }
 
 /* Trying to figure out CSS so nav scrolls */ 
+#body-main {
+	max-width: 75%;
+}
 
-header > nav {
+#header {
 	position: fixed;
 	width: 100%;
-	height: 200px;
-	left: 0;
-	top: 0;
 }
 
-.red-list > li {
-	display: inline-block;
-	padding: 5px 5px;
-	list-style-type: none; 
-	text-decoration: underline;
-	cursor: pointer;
-}  
+.border {
+	border: 2px solid black
+}
 
-/* Start flexbox Css   */
-.bodybox {
-  padding: 0;
-  list-style: none;
-  height: 5em; 
-  display: flex;
-  -webkit-flex-direction: row;
-  -webkit-flex-wrap: wrap;
+.navigation {
+	margin-right: 15%;
 }
-.bodybox > header { 
-  flex: 1 100%;
-  background: #FFB4B0;
-  border: 2px solid black;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 1em;
-  text-align: center;
-  width: 100%;
+
+#nav {
+	list-style-type: none;
+	text-align: center;
+	padding: 20px 9px;
+	margin: auto 0;
+	background-color: #FFB4B0;
 }
-.bluebox { 
-  flex-grow: 1;
-  text-align: center;
+
+#nav li {
+	padding: 0 .2em;
+	width:	45px;
+	text-align: left;
+	display: inline;
+}
+#bluebox {   
+  display: inline-block;
+  float: left;
   background: #4DD7FA ;
-  border: 2px solid black;
-  width: 200px;
-  margin: 5px 5px 0 0;
-  padding: 15px 10px;
-}
-.yellowbox { 
-  flex-grow: 10;
-  background: #FEFAC0 ;
-  border: 2px solid black;
-  width: 200px;
-  margin: 5px 0 0 0;
-}
+  box-sizing: border-box;  /*???????????*/
+  width: 30%;
+  height: 60%;
+  padding: auto;
+ }
 
-/*****  header fixed code  */
+ #bluebox div {
+ 	margin: 30px auto 20px 20px;
+ }
+
+
+ #bluebox, #yellowbox {
+ 	margin-top: 50px;
+ }
 
 /********CSS for inside BlueBox   */  
-.option {
+#artist-opt, album-opt {
 	color: black;
 	font-weight: bolder;
 	border: 2px solid black;
 	border-radius: 5px 5px 5px 5px;
 }
-.blue-list1  > li {
-	list-style-type: none;
-	padding: 2px 5px;
-	text-align: left;
-} 
-.blue-button {
+#button {
 	text-align: center;
 }
 
-/*****CSS for inside YellowBox---not currently in use  */
-
-.border-rt {
-	border-right: 2px solid black;
-}
-label {
-	display: block;
-}
-
-h2 {
-	margin: 5px 10px 5px 50px;
+#yellowbox {
+	display: inline-block;
+	float: right;
 	color: #785616;
+	width: 65%;
 }
 
 /* Code to style songlist songs */
