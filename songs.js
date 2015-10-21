@@ -26,6 +26,30 @@ var currentSong = "";
 
 var infoSong = "";
 
+var addSong = document.getElementById("new-song");
+var addArtist = document.getElementById("new-artist");
+var addAlbum = document.getElementById("new-album");
+ 
+var addMusic = document.getElementById("add-music");
+
+
+// Listen for the click on the Add Music nav and display input scrren and hide blue & yellow box
+
+addMusic.addEventListener("click", function() {
+	document.getElementById("add-section").classList.remove("hidden");
+	document.getElementById("bluebox").classList.add("hidden");
+	document.getElementById("yellowbox").classList.add("hidden");
+})
+
+document.getElementById("add-done").addEventListener("click", function() {
+	document.getElementById("add-section").classList.add("hidden");
+	document.getElementById("bluebox").classList.remove("hidden");
+	document.getElementById("yellowbox").classList.remove("hidden");
+	listSong.innerHTML += "<div class='songLists'>" + addSong.value + " by " + addArtist.value + " on the album " + addAlbum.value + "</div>";
+});
+
+console.log("look at song? ", songs);
+
 for (var i = 0; i < songs.length; i++) {
 	testCheck = songs[i].indexOf(">");
 	if (testCheck !== -1) {
@@ -46,8 +70,9 @@ for (var i = 0; i < songs.length; i++) {
 
 }
 
+console.log("div with added song", listSong.innerHTML);
+
 listSong.innerHTML = infoSong;
 
-console.log("this should be the div ", listSong.innerHTML);
 
 

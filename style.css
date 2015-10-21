@@ -38,7 +38,16 @@ body{
 	text-align: left;
 	display: inline;
 }
-#bluebox {   
+
+#nav li:hover {
+	background-color: white;
+}
+
+.add-style {
+	margin: 150px auto 30px;
+}
+
+.bluebox {   
   display: inline-block;
   float: left;
   background: #4DD7FA ;
@@ -48,13 +57,13 @@ body{
   padding: auto;
  }
 
- #bluebox div {
+ .bluebox div {
  	margin: 30px auto 20px 20px;
  }
 
 
- #bluebox, #yellowbox {
- 	margin-top: 50px;
+ .bluebox, .yellowbox {
+ 	margin-top: 100px;
  }
 
 /********CSS for inside BlueBox   */  
@@ -68,11 +77,15 @@ body{
 	text-align: center;
 }
 
-#yellowbox {
+.yellowbox {
 	display: inline-block;
 	float: right;
 	color: #785616;
 	width: 65%;
+}
+
+.hidden {
+	display: none;
 }
 
 /* Code to style songlist songs */

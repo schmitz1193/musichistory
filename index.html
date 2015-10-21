@@ -12,16 +12,23 @@
     <header id="header">
       <nav class="navigation border">
          <ul id="nav">
-            <li><a href="#">View Music</a></li>
+            <li id="view-music">View Music</li>
             <li> | </li>
-            <li><a href="#">Add Music</a></li>
+            <li id="add-music">Add Music</li>
             <li> | </li>
-            <li><a href="#">Profile</a></li>
+            <li id="profile-click"> Profile</li>
           </ul>   
       </nav>
     </header>
 
-    <section id="bluebox" class="border">
+    <section id="add-section" class="yellowbox hidden">
+      <input type="text" id="new-artist" placeholder="Enter Artist Name">
+      <input type="text" id="new-song" placeholder="Enter Song">
+      <input type="text" id="new-album" placeholder="Enter Album Name">
+      <button type"text" id="add-done" placeholder="Click to add to song list">
+    </section>
+
+    <section id="bluebox" class="border bluebox">
       <form id="forms">
         <div class="length">
             <label>Song Length</label>
@@ -69,54 +76,8 @@
     </section>
 
 
-    <section id="yellowbox" class="border">
+    <section id="yellowbox" class="border yellowbox">
       <div id="lineOne" class="songColor"></div>
-    <!--     <h2 >Song Name</h2>
-          <div>
-            <ul class="yellow-list">
-              <li class="border-rt">Artist Name</li>
-              <li class="border-rt">Album Name</li>
-              <li>Genre</li>
-            </ul>
-          </div>
-        <h2>Song Name</h2>
-          <div>
-            <ul class="yellow-list">
-              <li class="border-rt">Artist Name</li>
-              <li class="border-rt">Album Name</li>
-              <li>Genre</li>
-            </ul>
-          </div>
-        <h2>Song Name</h2>
-          <div>
-            <ul class="yellow-list">
-              <li class="border-rt">Artist Name</li>
-              <li class="border-rt">Album Name</li>
-              <li>Genre</li>
-            </ul>
-          </div>
-       <h2>Song Name</h2>
-          <div>
-            <ul class="yellow-list">
-              <li class="border-rt">Artist Name</li>
-              <li class="border-rt">Album Name</li>
-              <li>Genre</li>
-            </ul>
-          </div>       -->
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
-        <div> blank div to take space</div>
     </section>
   </div>      <!--- closing tag for div just below body -->
   <script src="songs.js"></script> 
