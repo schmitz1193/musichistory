@@ -1,8 +1,6 @@
 body{
 	margin: 0 auto;
-	padding: 0;
 	max-width: 75%;
-	position: relative;
 	font-family: sans-serif;
 }
 
@@ -21,7 +19,7 @@ body{
 }
 
 .navigation {
-	margin-right: 15%;
+	margin-right: 25%;
 }
 
 #nav {
@@ -43,10 +41,6 @@ body{
 	background-color: white;
 }
 
-.add-style {
-	margin: 150px auto 30px;
-}
-
 .bluebox {   
   display: inline-block;
   float: left;
@@ -57,17 +51,38 @@ body{
   padding: auto;
  }
 
- .bluebox div {
- 	margin: 30px auto 20px 20px;
- }
-
 
  .bluebox, .yellowbox {
  	margin-top: 100px;
  }
 
+.yellowbox {
+	display: inline-block;
+/*	float: right;  */
+	color: #785616;
+	width: 65%;
+	margin-left: 40px;
+}
 /********CSS for inside BlueBox   */  
-#artist-opt, album-opt {
+ .length {
+ 	margin: 50px 0 50px 20px;
+ }
+
+.artist {
+ 	margin: 20px 0 0 20px;
+ }
+.album {
+ 	margin: 50px 0 50px 20px;
+ }
+.check {
+ 	margin: 25px 0 50px 20px;
+ }
+
+ .check p {
+ 	margin: 10px auto 10 px 20px; 
+ }
+
+#artist-opt, #album-opt {
 	color: black;
 	font-weight: bolder;
 	border: 2px solid black;
@@ -75,14 +90,9 @@ body{
 }
 #button {
 	text-align: center;
+	margin: 10px 0 20px 0;
 }
-
-.yellowbox {
-	display: inline-block;
-	float: right;
-	color: #785616;
-	width: 65%;
-}
+/***** hide pages depending on the click */
 
 .hidden {
 	display: none;
