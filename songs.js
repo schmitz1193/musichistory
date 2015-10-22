@@ -19,34 +19,41 @@ songs.push("Rehab > by Amy Winehouse on the album Back to Back");
 var testCheck = 0;
 var sliceSign = '';
 var sliceAllOthers = '';
-
-var listSong = document.getElementById("lineOne");
-
 var currentSong = "";
-
 var infoSong = "";
+var newLine = '';
 
-var addSong = document.getElementById("new-song");
-var addArtist = document.getElementById("new-artist");
-var addAlbum = document.getElementById("new-album");
+//Begin jQuery code
+
+$(document).ready(function() {
+
+//	var listSong = $("#lineOne");
+	var addSong = $("#new-song");
+	var addArtist = $("#new-artist");
+	var addAlbum = $("#new-album"); 
+//	var addMusic = $("#add-music");
+
  
-var addMusic = document.getElementById("add-music");
-
 
 // Listen for the click on the Add Music nav and display input scrren and hide blue & yellow box
 
-addMusic.addEventListener("click", function() {
-	document.getElementById("add-section").classList.remove("hidden");
-	document.getElementById("bluebox").classList.add("hidden");
-	document.getElementById("yellowbox").classList.add("hidden");
-})
+	$("#add-music").click(function()  {
+		console.log("did we get here?");
+		$("#add-section").show();
+		$("#bluebox").hide();
+		$("#yellowbox").hide();
+	});
 
-document.getElementById("add-done").addEventListener("click", function() {
-	document.getElementById("add-section").classList.add("hidden");
-	document.getElementById("bluebox").classList.remove("hidden");
-	document.getElementById("yellowbox").classList.remove("hidden");
-	listSong.innerHTML += "<div class='songLists'>" + addSong.value + " by " + addArtist.value + " on the album " + addAlbum.value + "</div>";
-});
+	$("#add-done").click(function() {
+	//	$("#add-section").hide();
+		$("#bluebox").show();
+		$("#yellowbox").show();
+
+		console.log("addsong ", addSong);		
+	
+		newLine = "<div class='songLists'>" + addSong.value + " by " + addArtist.value + " on the album " + addAlbum.value + "</div>";
+		$("#lineOne").append(newLine);
+	});
 
 console.log("look at song? ", songs);
 
@@ -66,13 +73,12 @@ for (var i = 0; i < songs.length; i++) {
 	currentSong = songs[i];
 	currentSong = "<div class='songLists'>" + currentSong + "</div>";
 	
-	infoSong = infoSong + currentSong;
+	infoSong += currentSong;
 
-}
+	}
 
-console.log("div with added song", listSong.innerHTML);
+	$("#lineOne").html(infoSong);
 
-listSong.innerHTML = infoSong;
-
-
+//closing brackets for JQuery
+});
 
