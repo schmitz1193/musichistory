@@ -27,7 +27,7 @@ var newLine = '';
 
 $(document).ready(function() {
 
-//	var listSong = $("#lineOne");
+	var listSong = $("#lineOne");
 	var addSong = $("#new-song");
 	var addArtist = $("#new-artist");
 	var addAlbum = $("#new-album"); 
@@ -39,20 +39,21 @@ $(document).ready(function() {
 
 	$("#add-music").click(function()  {
 		console.log("did we get here?");
-		$("#add-section").show();
+		$("#add-section").removeClass("hidden");
 		$("#bluebox").hide();
 		$("#yellowbox").hide();
 	});
 
 	$("#add-done").click(function() {
-	//	$("#add-section").hide();
+		$("#add-section").addClass("hidden");
 		$("#bluebox").show();
-		$("#yellowbox").show();
-
-		console.log("addsong ", addSong);		
+		$("#yellowbox").show();	
 	
-		newLine = "<div class='songLists'>" + addSong.value + " by " + addArtist.value + " on the album " + addAlbum.value + "</div>";
+		newLine = "<div class='songLists'>" + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
 		$("#lineOne").append(newLine);
+		addSong.val("");
+		addArtist.val("");
+		addAlbum.val("");
 	});
 
 console.log("look at song? ", songs);
