@@ -1,27 +1,6 @@
-var songs = [];
-
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-
-//add song to beginning of song array
-songs.unshift("With a Little Help from my Friends > by the Joe Cocker on the album With a Little Help from my Friends");
-
-
-//add song to end of song arrayß	
-songs.push("Rehab > by Amy Winehouse on the album Back to Back");
-
-//Loop over the array and remove any words or characters that obviously don't belong.
-
-//Students must find and replace the > character in each item with a - character.
-var testCheck = 0;
-var sliceSign = '';
-var sliceAllOthers = '';
-var currentSong = "";
-var infoSong = "";
+var yellowList = [];
 var newLine = '';
+var moreButton = '';
 
 //Begin jQuery code
 
@@ -38,7 +17,6 @@ $(document).ready(function() {
 // Listen for the click on the Add Music nav and display input scrren and hide blue & yellow box
 
 	$("#add-music").click(function()  {
-		console.log("did we get here?");
 		$("#add-section").removeClass("hidden");
 		$("#bluebox").hide();
 		$("#yellowbox").hide();
@@ -49,36 +27,72 @@ $(document).ready(function() {
 		$("#bluebox").show();
 		$("#yellowbox").show();	
 	
-		newLine = "<div class='songLists'>" + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
+		newLine = "<div class='songLists'>" 
+			    + "<button class='delete'>Delete</button>"
+		        + "   "
+				+ addSong.val() 
+				+ " by " 
+				+ addArtist.val() 
+				+ " on the album " 
+				+ addAlbum.val() 
+				+ "</div>";
 		$("#lineOne").append(newLine);
 		addSong.val("");
 		addArtist.val("");
 		addAlbum.val("");
 	});
 
-console.log("look at song? ", songs);
-
-for (var i = 0; i < songs.length; i++) {
-	testCheck = songs[i].indexOf(">");
-	if (testCheck !== -1) {
-//using index of > sign location slice it out, add a - and tack on the end.		
-		sliceSign = songs[i].slice(0, testCheck) + "-" + songs[i].slice(testCheck +1);
-		songs[i] = sliceSign;
-	}	
-//using replace get rid of all other symbols --- check f symbols
-	songs[i] = songs[i].replace(/!|@|\*|\(/g, "");
-		
-//Must add each string to the DOM in index.html in the main content area.
+//This function will add the info from the JSon file to the DOM (aka yellowbox)
 //{Song name} by {Artist} on the album {Album}
 
-	currentSong = songs[i];
-	currentSong = "<div class='songLists'>" + currentSong + "</div>";
-	
-	infoSong += currentSong;
+	function addSongsToList(songLists) {
+		for (var i = 0; i < songLists.songs.length; i++) {
+		   	yellowList[i] = "<div class='songLists'>"
+			            + "<button class='delete'>Delete</button>"
+			            + "   "
+			            + songLists.songs[i].title 
+			            + " by " 
+			            + songLists.songs[i].artist 
+			            + " on the album " 
+			            + songLists.songs[i].album
+			            + "</div>";
+		    $("#lineOne").append(yellowList[i]);
+		}
+
+		var moreButton = "<button class='more'>MORE</button>";
+		$("#lineOne").append(moreButton);
 
 	}
 
-	$("#lineOne").html(infoSong);
+	$("body").on('click', '.delete', function(event) {
+		  // Delete div element including message and button
+		// $("#lineOne").child.remove();
+		console.log(event);
+	});
+
+
+//AJAX will get the songlist and then call a function to create the list in the yellow box
+	$.ajax({
+	 url: "songs.json"
+	}).done(function(songLists) {
+		addSongsToList(songLists);
+	});
+
+//	$(".more").click(function() {
+	$("body").on("click",".more", function(event) {
+		$.ajax({
+		 url: "moreSongs.json",
+		 error: function (a, b, c) {
+		 	console.log(a);
+		 	console.log(b);
+		 	console.log(c);
+		 }
+		}).done(function(songLists2) {
+			$(".more").remove();
+			addSongsToList(songLists2);
+
+		});
+	});
 
 //closing brackets for JQuery
 });
