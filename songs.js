@@ -66,8 +66,10 @@ $(document).ready(function() {
 
 	$("body").on('click', '.delete', function(event) {
 		  // Delete div element including message and button
-		// $("#lineOne").child.remove();
+		// used this "event" log to go through object
+		// to find what it is associated with
 		console.log(event);
+		event.target.parentNode.remove();
 	});
 
 

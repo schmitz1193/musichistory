@@ -103,7 +103,7 @@ body{
 .songLists {
 	padding: 15px 4px;
 }
-
+/*******************
 .songColor :nth-child(2n+0) {  
   background: #FFF5EE;
 }
@@ -115,11 +115,14 @@ body{
 .songLists:first-child {
   font-weight: bolder;
 }
-
-.more-button {
+*************************/
+.more {
 	background: grey;
-	text-align: center;
-	
+	margin: 40px 275px;
+}
+
+.more :hover {
+	background:  white;
 }
 
 
