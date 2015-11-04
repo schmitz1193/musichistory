@@ -1,0 +1,69 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  border: yellow dotted 2px; }
+
+body{
+	margin: 0 auto;
+	max-width: 75%;
+	font-family: sans-serif;
+}
+
+/* Trying to figure out CSS so nav scrolls */
+.border {
+  border: 2px solid black; }
+
+#nav li:hover {
+  background-color: white; }
+
+.bluebox {
+  background: #4DD7FA; }
+
+.bluebox, .yellowbox {
+  margin-top: 0px; }
+
+.yellowbox {
+  background-color: goldenrod; 
+}
+
+/********CSS for inside BlueBox   */
+#artist-opt, #album-opt {
+  color: black;
+  font-weight: bolder;
+  border: 2px solid black;
+  border-radius: 5px 5px 5px 5px; }
+
+#button {
+  text-align: center;
+  margin: 10px 0 20px 0; }
+
+/***** hide pages depending on the click */
+.hidden {
+  display: none; }
+
+/* Code to style songlist songs *
+
+.songLists {
+	padding: 15px 4px;
+}                             */
+/*******************
+.songColor :nth-child(2n+0) {  
+  background: #FFF5EE;
+}
+
+.songColor :nth-child(2n+1) { 
+  background: #F5FFFA;
+}
+
+.songLists:first-child {
+  font-weight: bolder;
+}
+*************************/
+.more {
+  background: grey;
+  margin: 40px 275px; }
+
+.more :hover {
+  background: white; }
+
+/*# sourceMappingURL=main.css.map */

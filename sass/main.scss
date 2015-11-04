@@ -1,58 +1,36 @@
-# Music History
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
 
-
-
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  border: yellow dotted 2px;
+}
+/***************************
 body{
 	margin: 0 auto;
 	max-width: 75%;
 	font-family: sans-serif;
 }
-
+*****************************/
 /* Trying to figure out CSS so nav scrolls */ 
-#body-main {
-	max-width: 75%;
-}
-
-#header {
-	position: fixed;
-	width: 100%;
-}
 
 .border {
 	border: 2px solid black
 }
 
-.navigation {
-	margin-right: 25%;
+
+.col-md-4 {
+	background-color: red;
 }
 
-#nav {
-	list-style-type: none;
-	text-align: center;
-	padding: 20px 9px;
-	margin: auto 0;
-	background-color: #FFB4B0;
-}
-
-#nav li {
-	padding: 0 .2em;
-	width:	45px;
-	text-align: left;
-	display: inline;
-}
 
 #nav li:hover {
 	background-color: white;
 }
 
 .bluebox {   
-  display: inline-block;
-  float: left;
   background: #4DD7FA ;
-  box-sizing: border-box;  /*???????????*/
-  width: 30%;
-  height: 60%;
-  padding: auto;
  }
 
 
@@ -61,30 +39,9 @@ body{
  }
 
 .yellowbox {
-	display: inline-block;
-/*	float: right;  */
 	color: #785616;
-	width: 65%;
-	margin-left: 40px;
 }
 /********CSS for inside BlueBox   */  
- .length {
- 	margin: 50px 0 50px 20px;
- }
-
-.artist {
- 	margin: 20px 0 0 20px;
- }
-.album {
- 	margin: 50px 0 50px 20px;
- }
-.check {
- 	margin: 25px 0 50px 20px;
- }
-
- .check p {
- 	margin: 10px auto 10 px 20px; 
- }
 
 #artist-opt, #album-opt {
 	color: black;
@@ -102,11 +59,11 @@ body{
 	display: none;
 }
 
-/* Code to style songlist songs */
+/* Code to style songlist songs *
 
 .songLists {
 	padding: 15px 4px;
-}
+}                             */
 /*******************
 .songColor :nth-child(2n+0) {  
   background: #FFF5EE;
@@ -128,7 +85,6 @@ body{
 .more :hover {
 	background:  white;
 }
-
 
 
 

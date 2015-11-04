@@ -27,15 +27,7 @@ $(document).ready(function() {
 		$("#bluebox").show();
 		$("#yellowbox").show();	
 	
-		newLine = "<div class='songLists'>" 
-			    + "<button class='delete'>Delete</button>"
-		        + "   "
-				+ addSong.val() 
-				+ " by " 
-				+ addArtist.val() 
-				+ " on the album " 
-				+ addAlbum.val() 
-				+ "</div>";
+		newLine = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
 		$("#lineOne").append(newLine);
 		addSong.val("");
 		addArtist.val("");
@@ -47,15 +39,7 @@ $(document).ready(function() {
 
 	function addSongsToList(songLists) {
 		for (var i = 0; i < songLists.songs.length; i++) {
-		   	yellowList[i] = "<div class='songLists'>"
-			            + "<button class='delete'>Delete</button>"
-			            + "   "
-			            + songLists.songs[i].title 
-			            + " by " 
-			            + songLists.songs[i].artist 
-			            + " on the album " 
-			            + songLists.songs[i].album
-			            + "</div>";
+		   	yellowList[i] = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + songLists.songs[i].title + " by " + songLists.songs[i].artist + " on the album " + songLists.songs[i].album + "</div>";
 		    $("#lineOne").append(yellowList[i]);
 		}
 
@@ -75,7 +59,7 @@ $(document).ready(function() {
 
 //AJAX will get the songlist and then call a function to create the list in the yellow box
 	$.ajax({
-	 url: "songs.json"
+	 url: "data/songs.json"
 	}).done(function(songLists) {
 		addSongsToList(songLists);
 	});
@@ -83,7 +67,7 @@ $(document).ready(function() {
 //	$(".more").click(function() {
 	$("body").on("click",".more", function(event) {
 		$.ajax({
-		 url: "moreSongs.json",
+		 url: "data/moreSongs.json",
 		 error: function (a, b, c) {
 		 	console.log(a);
 		 	console.log(b);
