@@ -1,85 +1,69 @@
-var yellowList = [];
-var newLine = '';
-var moreButton = '';
+define(["jquery", "populate-songs", "get-more-songs"], function($, populate, more) {
 
-//Begin jQuery code
 
-$(document).ready(function() {
-
+	var yellowList = [];
+	var newLine = '';
+	var moreButton = '';
 	var listSong = $("#lineOne");
 	var addSong = $("#new-song");
 	var addArtist = $("#new-artist");
 	var addAlbum = $("#new-album"); 
-//	var addMusic = $("#add-music");
+
+// NOTE to self:  do not need a return in this module!!!!!
 
  
-
-// Listen for the click on the Add Music nav and display input scrren and hide blue & yellow box
-
-	$("#add-music").click(function()  {
-		$("#add-section").removeClass("hidden");
-		$("#bluebox").hide();
-		$("#yellowbox").hide();
-	});
-
-	$("#add-done").click(function() {
-		$("#add-section").addClass("hidden");
-		$("#bluebox").show();
-		$("#yellowbox").show();	
-	
-		newLine = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
-		$("#lineOne").append(newLine);
-		addSong.val("");
-		addArtist.val("");
-		addAlbum.val("");
-	});
-
 //This function will add the info from the JSon file to the DOM (aka yellowbox)
 //{Song name} by {Artist} on the album {Album}
-
 	function addSongsToList(songLists) {
 		for (var i = 0; i < songLists.songs.length; i++) {
 		   	yellowList[i] = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + songLists.songs[i].title + " by " + songLists.songs[i].artist + " on the album " + songLists.songs[i].album + "</div>";
 		    $("#lineOne").append(yellowList[i]);
 		}
 
-		var moreButton = "<button class='more'>MORE</button>";
+		moreButton = "<button class='more'>MORE</button>";
 		$("#lineOne").append(moreButton);
 
 	}
 
-	$("body").on('click', '.delete', function(event) {
-		  // Delete div element including message and button
-		// used this "event" log to go through object
-		// to find what it is associated with
-		console.log(event);
-		event.target.parentNode.remove();
-	});
+// Listen for the click on the Add Music nav and display input screen and hide blue & yellow box
 
-
-//AJAX will get the songlist and then call a function to create the list in the yellow box
-	$.ajax({
-	 url: "data/songs.json"
-	}).done(function(songLists) {
-		addSongsToList(songLists);
-	});
-
-//	$(".more").click(function() {
-	$("body").on("click",".more", function(event) {
-		$.ajax({
-		 url: "data/moreSongs.json",
-		 error: function (a, b, c) {
-		 	console.log(a);
-		 	console.log(b);
-		 	console.log(c);
-		 }
-		}).done(function(songLists2) {
-			$(".more").remove();
-			addSongsToList(songLists2);
-
+		$("#add-music").click(function()  {
+			$("#add-section").removeClass("hidden");
+			$("#bluebox").hide();
+			$("#yellowbox").hide();
 		});
-	});
 
-//closing brackets for JQuery
+		$("#add-done").click(function() {
+			$("#add-section").addClass("hidden");
+			$("#bluebox").show();
+			$("#yellowbox").show();	
+		
+			newLine = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
+			$("#lineOne").append(newLine);
+			addSong.val("");
+			addArtist.val("");
+			addAlbum.val("");
+		});
+
+//Calll get more songs to populate the song list 
+//AJAX will get the songlist and then call a function to create the list in the yellow box
+		populate.getData(addSongsToList);
+
+//If you click on more, call AJAX again to get the second Json list of titles to append the yellow box
+	 	$("body").on("click",".more", function(event) {
+		 	more.getData(addSongsToList);
+		 });
+
+//When the delete button is clicked, remove the song associated with that button from the list		
+		$("body").on('click', '.delete', function(event) {
+// Delete div element including message and button 
+// used this "event" log to go through object to find what it is associated with
+			event.target.parentNode.remove();
+		});
+
+//curly bracket for return
+
+
+//closing brackets //////////////////////////////////////////////////////////////////////////////////
 });
 
