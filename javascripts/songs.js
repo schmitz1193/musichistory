@@ -1,4 +1,6 @@
-define(["jquery", "populate-songs", "get-more-songs"], function($, populate, more) {
+
+
+define(["jquery", "hbs", "populate-songs", "get-more-songs"], function($, handlebars, populate, more) {
 
 
 	var yellowList = [];
@@ -15,13 +17,19 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate, mor
 //This function will add the info from the JSon file to the DOM (aka yellowbox)
 //{Song name} by {Artist} on the album {Album}
 	function addSongsToList(songLists) {
-		for (var i = 0; i < songLists.songs.length; i++) {
-		   	yellowList[i] = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + songLists.songs[i].title + " by " + songLists.songs[i].artist + " on the album " + songLists.songs[i].album + "</div>";
-		    $("#lineOne").append(yellowList[i]);
-		}
-
-		moreButton = "<button class='more'>MORE</button>";
-		$("#lineOne").append(moreButton);
+		require(["hbs!../templates/songs"], function(songTemplate) {
+				$("#lineOne").append(songTemplate(songLists));
+				moreButton = "<button class='more'>MORE</button>";
+				$("#lineOne").append(moreButton);
+				
+		});
+		//});
+		// for (var i = 0; i < songLists.songs.length; i++) {
+		//    	yellowList[i] = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + songLists.songs[i].title + " by " + songLists.songs[i].artist + " on the album " + songLists.songs[i].album + "</div>";
+		//     $("#lineOne").append(yellowList[i]);
+		// }
+		
+		
 
 	}
 
@@ -39,7 +47,7 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate, mor
 			$("#yellowbox").show();	
 		
 			newLine = "<div class='songLists'>" + "<button class='delete'>Delete</button>" + "   " + addSong.val() + " by " + addArtist.val() + " on the album " + addAlbum.val() + "</div>";
-			$("#lineOne").append(newLine);
+			$(".songBox").append(newLine);
 			addSong.val("");
 			addArtist.val("");
 			addAlbum.val("");
