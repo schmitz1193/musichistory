@@ -3,19 +3,14 @@ body {
   color: #333;
   border: yellow dotted 2px; }
 
-/***************************
-body{
-	margin: 0 auto;
-	max-width: 75%;
-	font-family: sans-serif;
-}
-*****************************/
+body {
+  margin: 0 auto;
+  max-width: 75%;
+  font-family: sans-serif; }
+
 /* Trying to figure out CSS so nav scrolls */
 .border {
   border: 2px solid black; }
-
-.col-md-4 {
-  background-color: red; }
 
 #nav li:hover {
   background-color: white; }

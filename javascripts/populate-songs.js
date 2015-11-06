@@ -1,22 +1,18 @@
 
-define(["jquery"], function($) {
+define(["jquery", "add-songs"], function($, add) {
 
 	return {
 
 //NOTE to self:  review syntax for functions within returns!!!!!
 
-		getData: function(returnSongs) {
+		getData: function() {
 
-	// this function passes a function as a parameter from songs.js 
-	//AJAX will get the songlist and then return the function with the songlist data
-	//in songs.js, the function is involkes and creates the list in the yellow box
+
+	//AJAX will get the songlist and then invoke the function to add the  songlist data to the yellow box
 			$.ajax({url: "data/songs.json"})
-			.done(returnSongs);
-
-		},
+			.done(add.addSongsToList);
+		}
 	};
-
-
 });
 
 
