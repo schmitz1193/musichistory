@@ -1,0 +1,46 @@
+{
+  "songs": {
+    "Walk":
+    {
+      "title": "The Walk",
+      "artist": "Mayer Hawthorne",
+      "album": "How Do You Do"
+    },
+    "Medicine":
+    {
+      "title": "Medicine",
+      "artist": "Grace Potter",
+      "album": "Grace Potter and the Nocturnals"      
+    },
+    "Legs":
+    {
+      "title": "Legs",
+      "artist": "ZZ Top",
+      "album": "Eliminator"      
+    },
+    "Rock":
+      {
+      "title": "I am a Rock",
+      "artist": "Simon & Garfunkel",
+      "album": "Sounds of Silence"
+    },
+    "Dust":
+    {
+      "title": "Dust in the Wind",
+      "artist": "Kansas",
+      "album": "Point of Know Return"      
+    },
+    "Logical":
+    {
+      "title": "The Logical Song",
+      "artist": "SuperTramp",
+      "album": "Breakfast in America"      
+    },
+    "Paradise":
+    {
+      "title": "Paradise by the Dashboard Light",
+      "artist": "MeatLoaf",
+      "album": "Bat out of Hell"      
+    }
+  }
+}

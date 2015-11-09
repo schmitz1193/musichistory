@@ -9,7 +9,7 @@ define(["jquery", "add-songs"], function($, add) {
 
 
 	//AJAX will get the songlist and then invoke the function to add the  songlist data to the yellow box
-			$.ajax({url: "data/songs.json"})
+			$.ajax({url: "https://burning-inferno-2252.firebaseio.com/songs/.json"})
 			.done(add.addSongsToList);
 		}
 	};
