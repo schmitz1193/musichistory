@@ -1,5 +1,3 @@
-<div class="songBox">
-{{#each songs}}
-<div class='songLists'><button class='delete'>Delete</button>   {{title}} by {{artist}} on the album {{album}}</div>
+{{#each this}}
+<div class='songLists'><button class='delete'>Delete</button>  <span class="title">{{title}}</span> by <span class="artist">{{artist}}</span> on the album <span class="album">{{album}}</span></div>
 {{/each}}
-</div>

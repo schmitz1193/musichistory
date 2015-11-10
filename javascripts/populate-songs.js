@@ -15,23 +15,3 @@ define(["jquery", "add-songs"], function($, add) {
 	};
 });
 
-
-
-//Review on functions with James!!!!!
-
-// doMath: function (numA, numB, mathFunction) {
-// 	return mathFunction(numA, numB);
-// }
-
-// returnSongs = function (paramenter) {
-// 	//does stuff
-// }
-
-
-//EXAMPLE FOR Passing a Function
-// var add = function (num1, num2) {
-// 	return num1 + num2
-// }
-
-
-// populate_songs.doMath(3, 4, add) 

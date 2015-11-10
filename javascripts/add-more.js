@@ -7,7 +7,7 @@ define(["jquery"], function($) {
 
 
 		var newSong = {
-			name: $("#new-song").val(),
+			title: $("#new-song").val(),
 			artist: $("#new-artist").val(),
 			album: $("#new-album").val()
 		};
