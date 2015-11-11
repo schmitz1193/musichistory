@@ -71,7 +71,7 @@ define(["jquery", "hbs", "populate-songs", "get-more-songs", "add-songs", "add-m
 		console.log("songSelections ", songSelections);
 
 		songSelections.each(function(){
-//children of "this" -- i.e.songSelections, are the divs with the class of 
+//children of "this" -- i.e.songSelections, are the divs with the class of artist or album
 			artistList = $(this).children(".artist").text();  
 			console.log("artistList ", artistList);
 			albumList = $(this).children(".album").text();

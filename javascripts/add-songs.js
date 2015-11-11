@@ -23,4 +23,4 @@ console.log("songs from handlebars require ", songLists);
 	},
 
 	};
-});
+})
