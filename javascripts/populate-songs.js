@@ -1,5 +1,5 @@
 
-define(["jquery"], function($) {
+define(["jquery", "firebase"], function($, firebase) {
 
 	return {
 

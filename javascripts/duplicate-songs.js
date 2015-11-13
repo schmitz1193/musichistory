@@ -9,23 +9,22 @@ define(["jquery", "lodash"],
 			pluckArtist = _.pluck(uniqueArtist,"artist");
 			console.log("pluckArtist ", pluckArtist);
 			return pluckArtist;
-		}
+		},
 
 //Use lodash to check for duplicate artists		
-		// deleteAlbumDuplicates: function(Array) {
-		// 	uniqueAlbum = _.chain(Array).uniq("album").pluck("album").val();
-		// 	console.log("uniqueAlbum ", uniqueAlbum);
-		// 	return uniqueAlbum;
-		// }
+		deleteAlbumDuplicates: function(array) {
+			uniqueAlbum = _.uniq(array,"album");
+			pluckAlbum = _.pluck(uniqueAlbum,"album");
+			console.log("pluckAlbum ", pluckAlbum);
+			return pluckAlbum;
+		}
 
 	};
 
 
-
-
 });
 
-
+//Steve's code
 // var matchingAlbums = _.chain(config.originalSongsArray)
 //                       .filter((song) => song.artist === selectedArtist)
 //                       .uniq('album.name')

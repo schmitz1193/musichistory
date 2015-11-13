@@ -17,10 +17,7 @@ define(["jquery", "hbs", "duplicate-songs"],
 			console.log("songArray ", songArray);
 
 		var uniqueArtist = duplicates.deleteArtistDuplicates(songArray);
-		// var uniqueAlbum = duplicates.deleteAlbumDuplicates(songArray);
-		// var uniqueArtist = songLists;
-		var uniqueAlbum = songLists;
-
+		var uniqueAlbum = duplicates.deleteAlbumDuplicates(songArray);
 
 		require(["hbs!../templates/songs"], function(songTemplate) {
 			$("#lineOne").html(songTemplate(songLists));
@@ -35,4 +32,3 @@ define(["jquery", "hbs", "duplicate-songs"],
 
 	};
 });
-// var uniqueArtist = duplicate.noArtistDuplicates(arr);

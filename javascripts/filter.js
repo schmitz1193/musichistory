@@ -12,10 +12,12 @@ define(["jquery", "lodash"], function($, lodash) {
 //children of "this" -- i.e.songSelections, are the divs with the class of artist or album
 			artistList = $(this).children(".artist").text();  
 			albumList = $(this).children(".album").text();
-		$(this).show();
 			if ((artistselection !== artistList) && (albumselection !== albumList)) {
 				console.log("this ", this);
 				$(this).hide();
+			}
+			else {
+				$(this).show();
 			}
 		});
 

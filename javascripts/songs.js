@@ -1,7 +1,7 @@
 
 
-define(["jquery", "lodash", "hbs", "populate-songs",  "format-songs", "add-more", "filter", "delete-songs", "duplicate-songs"], 
-	function($, lodash, handlebars, populate, format, addMore, filter, deleteSongs, noDuplicates) {
+define(["jquery", "lodash", "hbs", "firebase", "format-songs", "add-more", "filter", "delete-songs"], 
+	function($, lodash, handlebars, firebase, format, addMore, filter, deleteSongs) {
 
 	var yellowList = [];
 	var newLine = '';
@@ -14,7 +14,26 @@ define(["jquery", "lodash", "hbs", "populate-songs",  "format-songs", "add-more"
 
 //Call function that uses AJAX to get data from my API to populate the song list 
 //AJAX will get the songlist and then call a function to create the list in the yellow box
-		populate.getData(format.formatLists);
+		// populate.getData(format.formatLists);
+
+// Create a reference to your Firebase database
+var myFirebaseRef = new Firebase("https://burning-inferno-2252.firebaseio.com/");
+
+// Listen for when anything changes on the "songs" key
+myFirebaseRef.child("songs").on("value", function(snapshot) {
+
+  // Store the entire songs key in a local variable
+  var allSongsObject = snapshot.val();
+
+  console.log("allSongsObject ", allSongsObject);
+
+  // Bind the allSongsObject to the song list Handlebar template
+  // Bind the unique artists to the artists template
+  // Bind the unique albums to the albums template
+
+  format.formatLists(allSongsObject);
+
+});		
 
 // Listen for the click on the Add Music nav and display input screen and hide blue & yellow box
 		$("#add-music").click(function()  {
@@ -38,7 +57,7 @@ define(["jquery", "lodash", "hbs", "populate-songs",  "format-songs", "add-more"
 //Call addMore to invoke function that adds the input data via an AJAX call to the API
 				addMore.addData();
 
-				populate.getData(format.formatLists);
+				// populate.getData(format.formatLists);
  			}   //end of else
 //blank out input values so the input boxes are cleared
 			addSong.val("");
