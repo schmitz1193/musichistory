@@ -1,7 +1,7 @@
 
 
-define(["jquery", "lodash", "hbs", "firebase", "format-songs", "add-more", "filter", "delete-songs"], 
-	function($, lodash, handlebars, firebase, format, addMore, filter, deleteSongs) {
+define(["jquery", "lodash", "hbs", "q", "firebase", "format-songs", "add-more", "filter", "delete-songs"], 
+	function($, lodash, handlebars, Q, firebase, format, addMore, filter, deleteSongs) {
 
 	var yellowList = [];
 	var newLine = '';
@@ -47,17 +47,29 @@ myFirebaseRef.child("songs").on("value", function(snapshot) {
 		$("#add-done").click(function() {
 //if no data is entered, alert the user that all fields are required
 			if ((addSong.val() === "") || (addArtist.val() === "") || (addAlbum.val() === "")) {
-				alert("All input fields are required");
+			    $(".modal-title").text("Alert!");
+			    $("#add-modal").text("You must enter Song, title and artist.  Please try again.");
 			}
 			else {
+			
+//Call addMore to invoke function that adds the input data via an AJAX call to the API
+				addMore.addData()
+				.then(function(addedSong) {
+					console.log("promise kept!");
+			        $(".modal-title").text("Success!");
+			        $("#add-modal").text("Your music has been added to the database.");
+			    })
+			    // Fail gets executed when promise is rejected
+		        .fail(function(error) {
+		        	console.log("promis broken!!");
+			        $(".modal-title").text("Alert!");
+			        $("#add-modal").text("There was a problem adding your music.  Please try again.");
+
+ 			    });
+
 				$("#add-section").addClass("hidden");
 				$("#bluebox").show();
 				$("#yellowbox").show();	
-			
-//Call addMore to invoke function that adds the input data via an AJAX call to the API
-				addMore.addData();
-
-				// populate.getData(format.formatLists);
  			}   //end of else
 //blank out input values so the input boxes are cleared
 			addSong.val("");
@@ -71,7 +83,21 @@ myFirebaseRef.child("songs").on("value", function(snapshot) {
 			console.log("event.target.parentNode ", event.target.parentNode);
 			deleteKey = $(this).attr("id");
 			console.log("deleteKey ", deleteKey);
-			deleteSongs.deleteData(deleteKey);
+
+			deleteSongs.deleteData(deleteKey)
+					.then(function(addedSong) {
+					console.log("promise kept!");
+			        $(".modal-title").text("Success!");
+			        $("#add-modal").text("Your music has been removed from the database.");
+			    })
+			    // Fail gets executed when promise is rejected
+		        .fail(function(error) {
+		        	console.log("promise broken!!");
+			        $(".modal-title").text("Alert!");
+			        $("#add-modal").text("There was a problem deleting your music.  Please try again.");
+
+ 			    });
+
 // Delete div element including message and button 
 // used this "event" log to go through object to find what it is associated with
 			event.target.parentNode.remove();

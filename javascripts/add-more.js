@@ -1,7 +1,8 @@
-define(["jquery"], function($) {
+define(["jquery", "q"], function($, Q) {
+
+	var deferred = Q.defer();	
+
 	return {
-
-
 
 	addData: function() {
 
@@ -18,12 +19,19 @@ define(["jquery"], function($) {
 				$.ajax({url: "https://burning-inferno-2252.firebaseio.com/songs/.json",
 				method: "POST",
 				data: JSON.stringify(newSong)
-			}).done(function(addSong) {
-				console.log("Your new song is ", addSong);
-		});
-}
+				}).done(function(addSong) 
+				{
+				deferred.resolve(addSong);
+        	    }).fail(function(xhr, status, error) {
+        	    deferred.reject(error);
+        	    });
 
-};
-});
+            return deferred.promise;
+
+
+
+	} //addData function ends
+
+	};//return ends
+});//
  
-
