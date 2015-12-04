@@ -16,6 +16,7 @@ function($q, $http) {
             song_list = Object.keys(objectFromJSONFile.songs).map(song => objectFromJSONFile.songs[song]);
             resolve(song_list);
           }, function(error) {
+            console.log("THIS WAS AN ERROR!");
             reject(error);
           }
         );
@@ -27,25 +28,16 @@ function($q, $http) {
 
   return {
     loadSongs: function () {
-      /* 
-      Return the promise for controllers to listen to. This requires the following
-      code inside the controllers
-      
-      simpleSongs.loadSongs().then(
-        function () {
-          $scope.songs = simpleSongs.getSongs();
-        },
-        function (error) {
-          console.log(error);
-        }
-      );
-      */
+
+      // Return the promise for controllers to listen to. 
+ 
       return songPromise;
     },
     getSongs: function() {
       console.log("Factory returning all songs");
       return song_list;
     },
+    // this function is currently not being invoked from anywhere
     getSong: function(name) {
       console.log("Factory returning single song");
       return song_list.filter(function(song){
@@ -54,6 +46,7 @@ function($q, $http) {
     },
     addSong: function(song) {
       console.log("Added single song to factory");
+      console.log(song);
       song_list.push(song);
       return song_list;
     }

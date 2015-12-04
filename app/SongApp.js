@@ -24,10 +24,3 @@ app.config(['$routeProvider',
         controller: 'SongCtrl'
       });
   }]);
-
-app.controller("appCtrl", ["$q", "$http", "$scope", function($q, $http, $scope) {
-
-
-
-//closing brackets for Angular
-  }]);
