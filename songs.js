@@ -80,7 +80,8 @@ $(document).ready(function() {
 		addSongsToList(songLists);
 	});
 
-//	$(".more").click(function() {
+//if more is clicked, call AJAX again to get the moreSongs json file.  
+// then call same function to add to list in the yellow box
 	$("body").on("click",".more", function(event) {
 		$.ajax({
 		 url: "moreSongs.json",

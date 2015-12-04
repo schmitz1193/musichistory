@@ -1,3 +1,6 @@
+// THIS MODULE IS NO LONGER USED>>>functionality was added to songs.js in function addSongsToList
+
+
 $(document).ready(function() {
 
   $.ajax({

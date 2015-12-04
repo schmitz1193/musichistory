@@ -3,30 +3,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Music History jQuery</title>
+  <title>NSS Starter Kit - Angular</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body> 
-  <div class="body-main">
+<body ng-app="SongApp">
+
+  <div class ="body-man"></div>
+
     <header id="header">
       <nav class="navigation border">
          <ul id="nav">
-            <li id="view-music">View Music</li>
+            <li><a href="#/songs/list" id="view-music">View Music</a></li>
             <li> | </li>
-            <li id="add-music">Add Music</li>
+            <li><a href="#/songs/new" id="add-music">Add Music</a></li>
             <li> | </li>
-            <li id="profile-click"> Profile</li>
-          </ul>   
+            <li id="profile-click">Profile</li>
+          </ul>   	
       </nav>
     </header>
-
-    <section id="add-section" class="yellowbox hidden">
-      <input type="text" id="new-artist" placeholder="Enter Artist Name">
-      <input type="text" id="new-song" placeholder="Enter Song">
-      <input type="text" id="new-album" placeholder="Enter Album Name">
-      <button type"text" id="add-done" placeholder="Click to add to song list">
-    </section>
 
     <section id="bluebox" class="border bluebox">
       <form id="forms">
@@ -80,14 +75,17 @@
     </section>
 
 
-    <section id="yellowbox" class="border yellowbox">
+    <section id="yellowbox" class="border yellowbox" ng-view>
       <div id="lineOne" class="songColor"></div>
  <!--     <input type="button" class="more" value="More">  -->
     </section>
   </div>      <!--- closing tag for divj ust below body -->
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="songs.js"></script> 
-</body>
- 
+  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
 
- 
+  <script src="app/SongApp.js"></script>
+  <script src="app/controllers/SongCtrl.js"></script>
+  <script src="app/controllers/SongAdd.js"></script>
+</body>
+</html>

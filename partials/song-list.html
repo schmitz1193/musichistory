@@ -1,0 +1,13 @@
+<div ng-repeat="song in songs">
+  <a href="#/songs/">{{ song.title }} by {{ song.artist }} on the album {{ song.album }}</a>
+  <button type="button" ng-click="deleteSong(song)">Delete Song</button> 
+</div>
+
+<a href="#/artist/list">View Artists</a> 
+<a href="#/album/list">View Album</a> 
+
+
+
+
+
+
