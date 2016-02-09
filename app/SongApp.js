@@ -1,4 +1,5 @@
-var app = angular.module("SongApp", ['ngRoute']);
+
+var app = angular.module("SongApp", ['firebase', 'ngRoute']);
 
 // through the $routeProvider, when the app config "hears" songs/list -from the href link in index.html
 // it uses the song-list.html partial through SongCtrl to display the songs
@@ -24,3 +25,8 @@ app.config(['$routeProvider',
         controller: 'SongCtrl'
       });
   }]);
+// when('/songs/:songId', {
+      //   templateUrl: 'partials/songdetail.html',
+      //   controller: 'SongDetailCtrl'
+      // })
+      // .otherwise({ redirectTo: '/login'});

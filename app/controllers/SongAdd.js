@@ -1,23 +1,20 @@
-app.controller("SongAdd", ["$q", "$http", "$scope", "songStorage", function($q, $http, $scope, songStorage){
+app.controller("SongAdd", ["$q", "$http", "$scope", "$firebaseArray", 
+	function($q, $http, $scope, $firebaseArray){
 
-    $scope.newSong = { title: "", artist: "", album: ""};
+	var ref = new Firebase("https://burning-inferno-2252.firebaseio.com/songs/");
+    $scope.songs = $firebaseArray(ref);
+    $scope.newSong = {};
 
-    
-    $scope.nowAdd = function() {
-    	console.log("I am in nowAdd in SongAdd");
-    
-		songStorage.loadSongs().then(
-			function () {
-			  songToAdd = {title: $scope.newSong.title,
-						 artist: $scope.newSong.artist,
-						 album: $scope.newSong.album};
-		      $scope.songs = songStorage.addSong(songToAdd);
-		    },
-		    function (error) {
-		      console.log(error);
-		    }
-		);
+    // This controls the partial song-form.html 
+
+    // when the user clicks on the add button, the addSong function is called to add the song
+    $scope.addSong = function() {
+    	console.log("I am in addSong in SongAdd");
+    	$scope.songs.$add({
+	  			title: $scope.newSong.title,
+				artist: $scope.newSong.artist,
+				album: $scope.newSong.album
+	    		});
     };
  
-
  }]); 

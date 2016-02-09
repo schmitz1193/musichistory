@@ -3,8 +3,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NSS Starter Kit - Angular</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Music History - AngularFire</title>
+  <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!--   <link rel="stylesheet" type="text/css" href="styles/main.css">
+ -->  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body ng-app="SongApp">
@@ -29,28 +31,17 @@
             <label>Song Length</label>
             <input type="range" name="song-length" min="10" max="20" step="0.5" value="15">
         </div>
-
         <div class="artist">
-           <label>Artist:</label>   
+            <label>Artist:</label>   
             <select id="artist-opt" name="Options">
-              <option>Select Artist</option>
-              <option>Jackson Brown</option>
-              <option>Elton John</option>
-              <option>Billy Joel</option>
-              <option>Bruce Springstein</option>
             </select>
-        </div>
+        </div>  <!--end artist-->
 
         <div class="album">
-           <label>Albums:</label>   
+            <label>Albums:</label>   
             <select id="album-opt" name="Options">
-              <option>Select Album</option>
-              <option>Jackson Brown</option>
-              <option>Elton John</option>
-              <option>Billy Joel</option>
-              <option>Bruce Springstein</option>
             </select>
-        </div>
+        </div>  <!--end album-->
 
         <div class="check">
            <label >Genre:</label>
@@ -77,19 +68,18 @@
 
     <section id="yellowbox" class="border yellowbox" ng-view>
       <div id="lineOne" class="songColor"></div>
- <!--     <input type="button" class="more" value="More">  -->
     </section>
   </div>      <!--- closing tag for divj ust below body -->
+
+
+
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="lib/bower_components/angular/angular.min.js"></script>
-  <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
-  <!--  
-  <script src="lib/bower_components/firebase/dist/angular-route.min.js"></script>
-  <script src="lib/bower_components/angularfire/dist/angular-route.min.js"></script>
- -->
+  <script src="lib/bower_components/angular-route/angular-route.min.js"></script> 
+  <script src="lib/bower_components/firebase/firebase.js"></script>
+  <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 
   <script src="app/SongApp.js"></script>
-  <script src="app/factories/SongStorage.js"></script>
   <script src="app/controllers/SongCtrl.js"></script>
   <script src="app/controllers/SongAdd.js"></script>
 </body>
