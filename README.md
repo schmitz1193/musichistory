@@ -1,137 +1,19 @@
-# Music History
+NASHVILLE SOFTWARE SCHOOL - Front End Curriculum
+Music History
+This an ongoing  project that was worked on individually throughout the entire front end course. When you a new technique, library or language was introuced we applied it to our Music History Project.
 
-
-
-body{
-	margin: 0 auto;
-	max-width: 75%;
-	font-family: sans-serif;
-}
-
-/* Trying to figure out CSS so nav scrolls */ 
-#body-main {
-	max-width: 75%;
-}
-
-#header {
-	position: fixed;
-	width: 100%;
-}
-
-.border {
-	border: 2px solid black
-}
-
-.navigation {
-	margin-right: 25%;
-}
-
-#nav {
-	list-style-type: none;
-	text-align: center;
-	padding: 20px 9px;
-	margin: auto 0;
-	background-color: #FFB4B0;
-}
-
-#nav li {
-	padding: 0 .2em;
-	width:	45px;
-	text-align: left;
-	display: inline;
-}
-
-#nav li:hover {
-	background-color: white;
-}
-
-.bluebox {   
-  display: inline-block;
-  float: left;
-  background: #4DD7FA ;
-  box-sizing: border-box;  /*???????????*/
-  width: 30%;
-  height: 60%;
-  padding: auto;
- }
-
-
- .bluebox, .yellowbox {
- 	margin-top: 100px;
- }
-
-.yellowbox {
-	display: inline-block;
-/*	float: right;  */
-	color: #785616;
-	width: 65%;
-	margin-left: 40px;
-}
-/********CSS for inside BlueBox   */  
- .length {
- 	margin: 50px 0 50px 20px;
- }
-
-.artist {
- 	margin: 20px 0 0 20px;
- }
-.album {
- 	margin: 50px 0 50px 20px;
- }
-.check {
- 	margin: 25px 0 50px 20px;
- }
-
- .check p {
- 	margin: 10px auto 10 px 20px; 
- }
-
-#artist-opt, #album-opt {
-	color: black;
-	font-weight: bolder;
-	border: 2px solid black;
-	border-radius: 5px 5px 5px 5px;
-}
-#button {
-	text-align: center;
-	margin: 10px 0 20px 0;
-}
-/***** hide pages depending on the click */
-
-.hidden {
-	display: none;
-}
-
-/* Code to style songlist songs */
-
-.songLists {
-	padding: 15px 4px;
-}
-/*******************
-.songColor :nth-child(2n+0) {  
-  background: #FFF5EE;
-}
-
-.songColor :nth-child(2n+1) { 
-  background: #F5FFFA;
-}
-
-.songLists:first-child {
-  font-weight: bolder;
-}
-*************************/
-.more {
-	background: grey;
-	margin: 40px 275px;
-}
-
-.more :hover {
-	background:  white;
-}
-
-
-
-
-
-
+-Version 1: Create the look of our app with HTML and CSS following a moqup
+-Version 2: Use JavaScript arrays, loops, and innerHTML to show the music you love.
+-Version 3: Using CSS skills, to build even better looking music history pages and incorporate the Flexible Layout Box Model.
+-Version 4: Reconfigure CSS back to style prior to Flexible Layout Box Model and make Music History into a single page application.
+-v4JQ:  Incorporate JQuery into the project
+-Version 5: Reading from JSON files
+-Version 6: Using REQUIREJS along with GRUNT and SASS
+-Bootstrap: Refactor the look of Music History with Bootstrap
+-Version 7: Add new songs to the Firebase API with POST AJAX calls.
+-Handlebars: Use the JSON objects to populate Handlebar templates
+-Version 7-promises: Return a promise after songs are deleted or added.  Diplay modal verifying the process
+-v5Angular: From version 5, refactor using AngularJS
+-v5Angular_Factory: Use REQUIREJS with factories, controllers and promises to route Music History
+-v5Angular_Firebase: Create a firebase database from the JSON and use Firebase to manipulate songs.
 
